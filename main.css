@@ -172,7 +172,7 @@ a, button {
 }
 
 .menu__item--dropdown::after {
-    content: url('/img/dropdown.svg');
+    content: url('img/dropdown.svg');
     width: 5px;
     height: 10px;
     position: absolute;
@@ -433,7 +433,7 @@ a, button {
 }
 
 .courses__card-title::before {
-    content: url('/img/star.svg');
+    content: url('img/star.svg');
     width: 60px;
     height: 60px;
     display: inline-block;
@@ -486,7 +486,7 @@ a, button {
 }
 
 .courses__card-list li::before {
-    content: url('/img/check.svg');
+    content: url('img/check.svg');
     width: 24px;
     height: 24px;
     display: inline-block;
