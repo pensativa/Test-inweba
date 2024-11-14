@@ -1,13 +1,14 @@
 //Smooth scroll to blocks
-document.querySelectorAll('a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        let targetId;
+document.querySelectorAll('a').forEach(link => {
+    link.onclick = (e) => {
+        let targetId,
+            targetElement;
 
-        if (this.getAttribute('href').startsWith('#')) {
-            targetId = this.getAttribute('href').substring(1);
+        if (link.getAttribute('href').startsWith('#')) {
             e.preventDefault();
+            targetId = link.getAttribute('href').substring(1);
+            targetElement = document.getElementById(targetId);
         }
-        const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
             window.scrollTo({
@@ -15,7 +16,7 @@ document.querySelectorAll('a').forEach(anchor => {
                 behavior: 'smooth'
             });
         }
-    });
+    };
 });
 
 //Accordion scripts
@@ -41,7 +42,12 @@ const slides = document.querySelectorAll('.testimonials__slide');
 const sliderBtnPrev = document.querySelector('.testimonials__slider-prev');
 const sliderBtnNext = document.querySelector('.testimonials__slider-next');
 let sliderDots = document.querySelector('.testimonials__slider-dots');
-const slidesPerView = 2; //Count of slides on screen
+let slidesPerView = 2; //Count of slides on screen
+
+if (window.innerWidth < 920) {
+    slidesPerView = 1;
+}
+
 let total = 0;
 let numOfDots = 0;
 let numIndex = 0;
@@ -54,7 +60,7 @@ function setContainerWidth() {
 
     sliderContainer.style.width = `${total}px`;
 }
-setContainerWidth()
+setContainerWidth();
 
 //Creating dots dependent on the count of slides
 function createDots() {
@@ -71,17 +77,17 @@ function createDots() {
 createDots();
 
 //Changing slides' main function
-function changeSlides(n) {
-    const transform = total / numOfDots * n;
+function changeSlides(index) {
+    const transform = total / numOfDots * index;
     sliderContainer.style.transform = `translateX(-${transform}px)`
 
     sliderDots.forEach(dot => dot.classList.remove('active'));
-    sliderDots[n].classList.add('active');
+    sliderDots[index].classList.add('active');
 
-    if (n === 0) {
+    if (index === 0) {
         sliderBtnNext.classList.remove('disable');
         sliderBtnPrev.classList.add('disable');
-    } else if (n === numOfDots - 1) {
+    } else if (index === numOfDots - 1) {
         sliderBtnNext.classList.add('disable');
         sliderBtnPrev.classList.remove('disable');
     } else {
@@ -92,9 +98,7 @@ function changeSlides(n) {
 
 //Changing slides by button prev
 sliderBtnPrev.onclick = () => {
-    if (numIndex === 0) {
-        numIndex
-    } else {
+    if (numIndex !== 0) {
         numIndex--;
     }
     changeSlides(numIndex);
@@ -102,9 +106,7 @@ sliderBtnPrev.onclick = () => {
 
 //Changing slides by button next
 sliderBtnNext.onclick = () => {
-    if (numIndex === numOfDots - 1) {
-        numIndex
-    } else {
+    if (numIndex !== numOfDots - 1) {
         numIndex++;
     }
     changeSlides(numIndex);
@@ -116,3 +118,32 @@ sliderDots.forEach((dot, i) => dot.onclick = () => {
     changeSlides(i)
 });
 
+//Changing slides by swipe
+
+sliderContainer.addEventListener("touchstart", touchStart, false);
+sliderContainer.addEventListener("touchmove", touchMove, false);
+
+let xDown, 
+    yDown;
+
+function touchStart(evt) {
+    const { clientX, clientY } = evt.touches[0];
+    xDown = clientX; yDown = clientY;
+}
+
+function touchMove(evt) {
+    if (!xDown || !yDown) {
+        return; 
+    }
+
+    const { clientX, clientY } = evt.touches[0];
+
+    const xDiff = xDown - clientX;
+    const yDiff = yDown - clientY;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        xDiff > 0 ? sliderBtnNext.click() : sliderBtnPrev.click();
+    }
+    
+    xDown = yDown = null;
+}

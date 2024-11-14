@@ -20,6 +20,7 @@ body {
     font-style: normal;
     font-size: 18px;
     scroll-behavior: smooth;
+    min-width: 360px;
 }
 
 p {
@@ -984,4 +985,401 @@ a, button {
 
 .footer__menu-item:hover .footer__menu-link {
     color: var(--accent-color);
+}
+
+/*Adaptive version*/
+
+@media screen and (max-width: 1400px) {
+    .container {
+        padding: 0 32px;
+        max-width: 1200px;
+    }
+
+    .flexbox {
+        align-items: flex-start;
+    }
+
+    .footer .flexbox {
+        align-items: center;
+    }
+
+    .hero__textblock {
+        width: 65%;
+    }
+
+    .hero__image {
+        width: 33%;
+    }
+
+    .advantages__card {
+        padding: 3%;
+        width: 32%;
+    }
+
+    .about__image {
+        width: 44%;
+    }
+
+    .about__textblock {
+        width: 52%;
+        gap: 25px 2%;
+    }
+
+    .about__card:not(.about__card--full) {
+        width: 48%;
+    }
+
+    .testimonials__slide {
+        width: 556px;
+    }
+
+    .faq__accordion {
+        width: 54%;
+    }
+
+    .faq__form {
+        width: 44%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .flexbox {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .container {
+        max-width: 880px;
+        padding: 0 20px;
+    }
+
+    .hero__textblock,
+    .about__textblock,
+    .faq__accordion,
+    .faq__form {
+        width: 100%;
+    }
+
+    .hero__image,
+    .about__image  {
+        display: none;
+    }
+
+    .advantages__card {
+        width: 48%;
+    }
+
+    .courses__card-title {
+        max-width: 78%;
+    }
+
+    .courses__card-title::before,
+    .courses__card-list li::before  {
+        float: left;
+    }
+
+    .testimonials__slide {
+        width: 398px;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .container,
+    .hero .container {
+        max-width: 736px;
+        padding: 0 16px;
+    }
+
+    .title {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .link {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .link__icon {
+        padding: 5px 6px 0;
+    }
+
+    .hero__subtitle, .hero__title {
+        font-size: 40px;
+        line-height: 50.6px;
+    }
+
+    .hero__title {
+        margin: 0px 0 16px;
+    }
+
+    .courses__card {
+        padding: 24px;
+    }
+
+    .testimonials__slide {
+        width: 704px;
+    }
+
+    .testimonials__slider-nav {
+        width: 240px;
+    }
+
+    .footer__menu {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    p {
+        line-height: 20px;
+    }
+
+    .button {
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 16px;
+        line-height: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .container,
+    .hero .container {
+        max-width: 328px;
+    }
+
+    .header__logo {
+        margin: 0 auto;
+    }
+
+    .header__menu {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        gap: 16px;
+    }
+
+    .menu {
+        margin-right: 0;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .menu__item {
+        margin-right: 0;
+    }
+
+    .hero__textblock {
+        min-height: auto;
+        border-radius: 14px;
+        padding: 32px 24px;
+    }
+
+    .hero__subtitle, .hero__title {
+        font-size: 24px;
+        line-height: 34.6px;
+    }
+
+    .advantages__title {
+        padding: 24px;
+        text-align: center;
+    }
+
+    .advantages__card {
+        width: 100%;
+    }
+    
+    .advantages__card-img {
+        width: 48px;
+    }
+
+    .advantages__card-title {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 8px 0;
+    }
+
+    .about__card {
+        border-radius: 10px;
+        padding: 32px 24px;
+        min-height: auto;
+    }
+
+    .about__card-title {
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 14px;
+    }
+
+    .about__textblock {
+        gap: 12px 12px;
+    }
+
+    .about__card:not(.about__card--full) {
+        width: calc(50% - 6px);
+    }
+
+    .courses__card-title {
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .courses__card-title::before {
+        display: none;
+    }
+
+    .courses__card-link {
+        margin-left: auto;
+    }
+
+    .courses__card {
+        padding: 16px;
+        border-radius: 10px;
+        border-width: 1px;
+    }
+
+    .courses__card-tags {
+        gap: 8px;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+
+    .courses__card-tag {
+        padding: 8px 12px;
+    }
+
+    .courses__card-list li {
+        padding-left: 32px;
+        position: relative;
+    }
+
+    .courses__card-list li::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .courses__card-price {
+        font-size: 24px;
+        line-height: 30px;
+        margin: 20px 0 30px;
+    }
+
+    .form-section__title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .form__input, .form__textarea {
+        padding: 16px 12px;
+    }
+
+    .form__label {
+        top: 16px;
+        left: 12px;
+    }
+
+    .testimonials__slide {
+        width: 296px;
+    }
+
+    .testimonials__slide-img {
+        border-radius: 8px;
+        width: 100%;
+        height: auto;
+    }
+
+    .accordion__item {
+        border-radius: 12px;
+        padding: 24px;
+    }
+
+    .accordion__item-title {
+        width: 180px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .faq__form {
+        padding: 24px;
+        border-radius: 12px;
+    }
+
+    .faq__form-title {
+        font-size: 20px;
+        line-height: 28px;
+        padding-bottom: 18px;
+        margin-bottom: 24px;
+    }
+
+    .form__input::-webkit-input-placeholder, .form__textarea::-webkit-input-placeholder {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .form__input::-moz-placeholder, .form__textarea::-moz-placeholder {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .form__input:-ms-input-placeholder, .form__textarea:-ms-input-placeholder {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .form__input::-ms-input-placeholder, .form__textarea::-ms-input-placeholder {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .form__input::placeholder,
+    .form__textarea::placeholder {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .faq__form .button {
+        margin-top: 0;
+    }
+
+    .footer .flexbox {
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    .footer__logo {
+        width: auto;
+    }
+
+    .footer__menu {
+        gap: 8px;
+    }
+
+    .footer__copyright {
+        font-size: 12px;
+        line-height: 20px;
+        -webkit-box-ordinal-group: 4;
+            -ms-flex-order: 3;
+                order: 3;
+    }
+
+    .footer__menu-item,
+    .footer__menu-item:first-child {
+        padding: 10px 8px;
+    }
 }
