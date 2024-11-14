@@ -14,25 +14,25 @@
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container flexbox">
             <div class="header__logo">
-                <a href="/">
+                <a href="#header">
                     <img src="img/Logo.webp" alt="Logotype of Dickens Executive Coaching Academy" width="48" height="48">
                 </a>
             </div>
             <div class="header__menu">
                 <ul class="menu">
-                    <li class="menu__item active"><a href="/" class="menu__link">Home</a></li>
+                    <li class="menu__item active"><a href="#header" class="menu__link">Home</a></li>
                     <li class="menu__item menu__item--dropdown">
-                        <a href="/courses" class="menu__link ">Courses</a>
+                        <a href="#courses" class="menu__link ">Courses</a>
                         <ul class="submenu">
-                            <li class="submenu__item"><a href="/course-1" class="submenu__link">Level 1 (ACC Track) Experiential Executive Coaching Program</a></li>
-                            <li class="submenu__item"><a href="/course-2" class="submenu__link">Level 2 (PCC Track) Experiential Executive Coaching Program</a></li>
+                            <li class="submenu__item"><a href="#course-1" class="submenu__link">Level 1 (ACC Track) Experiential Executive Coaching Program</a></li>
+                            <li class="submenu__item"><a href="#course-2" class="submenu__link">Level 2 (PCC Track) Experiential Executive Coaching Program</a></li>
                         </ul>
                     </li>
-                    <li class="menu__item"><a href="/about" class="menu__link">About</a></li>
-                    <li class="menu__item"><a href="/contacts" class="menu__link">Contact us</a></li>
+                    <li class="menu__item"><a href="#about" class="menu__link">About</a></li>
+                    <li class="menu__item"><a href="#contacts" class="menu__link">Contact us</a></li>
                 </ul>
                 <button type="button" class="button">Login</button>
             </div>
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="container">
                 <div class="about__header flexbox">
                     <h2 class="about__title title">About us</h2>
@@ -110,10 +110,10 @@
                 </div>
             </div>
         </section>
-        <section class="courses">
+        <section class="courses" id="courses">
             <div class="container">
                 <h2 class="courses__title title">Our courses</h2>
-                <div class="courses__card">
+                <div class="courses__card" id="course-1">
                     <div class="courses__card-header flexbox">
                         <h3 class="courses__card-title">Level 1 (ACC Track) Experiential Executive Coaching Program</h3>
                         <a href="/course-1" class="courses__card-link link">
@@ -152,7 +152,7 @@
                     <p class="courses__card-price">Price <span class="courses__card-price-num">$6 499</span></p>
                     <a href="/course-1" class="button courses__card-button">JOIN</a>
                 </div>
-                <div class="courses__card">
+                <div class="courses__card" id="course-2">
                     <div class="courses__card-header flexbox">
                         <h3 class="courses__card-title">Level 2 (PCC Track) Experiential Executive Coaching Program</h3>
                         <a href="/course-2" class="courses__card-link link">
@@ -287,7 +287,7 @@
                 </div>
             </div>
         </section>
-        <section class="faq">
+        <section class="faq"  id="contacts">
             <div class="container">
                 <h2 class="faq__title title">FAQ</h2>
                 <div class="faq__body flexbox">
@@ -354,15 +354,15 @@
     <footer class="footer">
         <div class="container flexbox">
             <div class="footer__logo">
-                <a href="/">
+                <a href="#header">
                     <img src="img/Logo.webp" alt="Logo company" width="48" height="48">
                 </a>
             </div>
             <p class="footer__copyright">© 2024 Dickens Consulting Group, LLC</p>
             <ul class="footer__menu">
-                <li class="footer__menu-item"><a href="/courses" class="footer__menu-link">Course</a></li>
-                <li class="footer__menu-item"><a href="/about" class="footer__menu-link">About</a></li>
-                <li class="footer__menu-item"><a href="/contacts" class="footer__menu-link">Contact</a></li>
+                <li class="footer__menu-item"><a href="#courses" class="footer__menu-link">Course</a></li>
+                <li class="footer__menu-item"><a href="#about" class="footer__menu-link">About</a></li>
+                <li class="footer__menu-item"><a href="#contacts" class="footer__menu-link">Contact</a></li>
             </ul>
         </div>
     </footer>

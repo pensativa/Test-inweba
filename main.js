@@ -1,3 +1,23 @@
+//Smooth scroll to blocks
+document.querySelectorAll('a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        let targetId;
+
+        if (this.getAttribute('href').startsWith('#')) {
+            targetId = this.getAttribute('href').substring(1);
+            e.preventDefault();
+        }
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
 //Accordion scripts
 const accordionItems = document.querySelectorAll('.accordion__item');
 const accordionLinks = document.querySelectorAll('.accordion__header');
